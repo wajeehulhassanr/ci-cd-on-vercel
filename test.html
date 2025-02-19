@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Flask Endpoint</title>
+</head>
+<body>
+  <h1>Test Flask Endpoint</h1>
+  <button id="testButton">Fetch Text</button>
+  <p id="result"></p>
+
+  <script>
+    document.getElementById('testButton').addEventListener('click', () => {
+      // Make sure the URL matches where your Flask app is running (default: http://127.0.0.1:5000/)
+      fetch('http://127.0.0.1:5000/')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('result').innerText = data;
+        })
+        .catch(error => {
+          console.error('Error fetching endpoint:', error);
+          document.getElementById('result').innerText = 'Error fetching endpoint';
+        });
+    });
+  </script>
+</body>
+</html>`
