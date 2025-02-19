@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "this is the text. mlops"
+    return "this is the text."
 
 if __name__ == '__main__':
     app.run(debug=True)
